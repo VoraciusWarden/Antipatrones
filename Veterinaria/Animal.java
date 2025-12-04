@@ -1,19 +1,15 @@
 package Veterinaria;
 import java.util.Random;
-import java.util.Scanner;
 
 public abstract class Animal {
     
-public enum padecimientos {
-    GRIPE, FRACTURA, INFECCION, OTRO
-}
+    public enum Padecimientos {
+        GRIPE, FRACTURA, INFECCION, OTRO
+    }
 
     protected String nombre, colorPelaje, comidaFavorita;
-    protected padecimientos padecimiento;
-    Scanner scanner = new Scanner(System.in);
+    protected Padecimientos padecimiento;
 
-    public abstract void registrarAnimal();
-    public abstract padecimientos revisarAnimal();
     public abstract void tratarAnimal();
 
     Animal(String nombre, String colorPelaje, String comidaFavorita) {
@@ -34,7 +30,7 @@ public enum padecimientos {
 
     public void asignarPadecimientoAleatorio() {
         Random random = new Random();
-        padecimientos[] valores = padecimientos.values();
+        Padecimientos[] valores = Padecimientos.values();
         this.padecimiento = valores[random.nextInt(valores.length)];
     }
 

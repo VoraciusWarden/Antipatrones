@@ -1,18 +1,18 @@
 package Veterinaria;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Veterinaria {
-    String nombre;
-    Animal[] animals;
+    private String nombre;
+    private List<Animal> animals;
 
-    public Veterinaria (String nombre, Animal[] animals ){
+    public Veterinaria(String nombre) {
         this.nombre = nombre;
-        this.animals = animals;
+        this.animals = new ArrayList<>();
     }
 
-    public void ingresarAnimales(){
-        for(Animal animal : animals){
-            animal.registrarAnimal();
-        } 
+    public void agregarAnimal(Animal animal) {
+        this.animals.add(animal);
     }
     public void mostrarAnimales(){
         for(Animal animal : animals){

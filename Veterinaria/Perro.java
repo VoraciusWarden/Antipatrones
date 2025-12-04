@@ -7,29 +7,6 @@ public class Perro extends Animal {
     }
 
     @Override
-    public void registrarAnimal() {
-        System.out.println("ingrese el nombre del perro:");
-        nombre = scanner.nextLine();
-        System.out.println("ingrese el color del pelaje:");
-        colorPelaje = scanner.nextLine();
-        System.out.println("ingrese la comida favorita:");
-        comidaFavorita = scanner.nextLine();
-        scanner.close();
-    }
-
-    @Override
-    public padecimientos revisarAnimal() {
-        if(padecimiento == padecimientos.GRIPE) {
-            return this.padecimiento;
-        } else if (padecimiento == padecimientos.FRACTURA) {
-            return this.padecimiento;
-        } else if (padecimiento == padecimientos.INFECCION) {
-            return this.padecimiento;
-        } else {
-            return this.padecimiento;
-        }
-    }
-    @Override
     public void tratarAnimal() {
         switch (padecimiento) {
             case GRIPE:
@@ -45,8 +22,8 @@ public class Perro extends Animal {
                 System.out.println("Tratando el padecimiento del perro de manera general.");
                 break;
         }
-        this.padecimiento = null;
-        System.out.println("se ha tratado al animal");
+        asignarPadecimientoAleatorio();
+        System.out.println("Se ha tratado al animal.");
     }
 
 }
